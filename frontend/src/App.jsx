@@ -13,18 +13,6 @@ import secondBedroom from "./assets/Second bedroom.png";
 import homeTheatre from "./assets/Home theatre.png";
 import towerImage from "./assets/Modular kitchen.png";
 
-import planD from "./assets/Plan area.png";
-import planC from "./assets/Plan area (1).png";
-import planA from "./assets/Plan area (2).png";
-import planB from "./assets/Plan area (3).png";
-
-const floorPlans = [
-  { image: planD, bedrooms: "2 BHK", type: "D", area: "1,090" },
-  { image: planC, bedrooms: "2 BHK", type: "C", area: "1,030" },
-  { image: planA, bedrooms: "3 BHK", type: "A", area: "1,460" },
-  { image: planB, bedrooms: "3 BHK", type: "B", area: "1,480" },
-];
-
 import poolPhoto from "./assets/PHOTO · Swimming pool (replace fill with image).png";
 import gamesPhoto from "./assets/PHOTO · Indoor game area (replace fill with image).png";
 import gymPhoto from "./assets/PHOTO · Health club (replace fill with image).png";
@@ -56,7 +44,7 @@ const nearbyPlaces = [
   ] },
   { title: "Travel", subtitle: "Getting around is easy", symbol: "🚌", places: [
     [7, "KSRTC Bus Stand", "900 m"], [8, "Stadium Bus Stand", "1 km"], [9, "Kochi – Salem Highway (NH 544)", "2 km"],
-    [10, "Town Railway Station", "2.2 km"], [11, "Olavakkode Railway Station", "5.2 km"],
+    [10, "Town Railway Station", "2.2 km"], [11, "Olavakkode Railway Station", "5.2 km"], [12, "Airport", "45 km"],
   ] },
 ];
 
@@ -162,7 +150,6 @@ function App() {
             <a href="#overview">
               Overview
             </a>
-            <a href="#floor-plans">Floor Plans</a>
             <a href="#amenities">Amenities</a>
             <a href="#location">Location</a>
             <a href="#gallery">Gallery</a>
@@ -321,28 +308,6 @@ function App() {
                 </figure>
               ))}
             </div>
-          </div>
-        </section>
-        <section className="floor-plans-section" id="floor-plans" aria-labelledby="floor-plans-title">
-          <div className="floor-plans-heading">
-            <p className="gallery-eyebrow"><span>FLOOR PLANS</span></p>
-            <h2 id="floor-plans-title">Choose a home that fits your family</h2>
-            <button className="gold-button price-sheet-button" onClick={scrollToForm}>Get Full Price Sheet</button>
-          </div>
-          <div className="floor-plans-grid">
-            {floorPlans.map((plan) => (
-              <article className="floor-plan-card" key={plan.type}>
-                <img className="floor-plan-image" src={plan.image} alt={plan.bedrooms + " apartment floor plan, Tower 2, Type " + plan.type} loading="lazy" />
-                <div className="floor-plan-details">
-                  <div className="floor-plan-description">
-                    <span className="floor-plan-badge">{plan.bedrooms}</span>
-                    <p className="floor-plan-type">TOWER 2 · TYPE {plan.type}</p>
-                    <h3>{plan.area} Sq.Ft</h3>
-                  </div>
-                  <button className="floor-plan-request" onClick={scrollToForm} aria-label={"Request floor plan for Tower 2 Type " + plan.type}>Request floor plan <span aria-hidden="true">→</span></button>
-                </div>
-              </article>
-            ))}
           </div>
         </section>
         <section className="amenities-section" id="amenities" aria-labelledby="amenities-title">
